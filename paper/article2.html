@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文章详情 - 前端开发的思考与实践</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background-color: #f7f8fa;
+            color: #333;
+            line-height: 1.75;
+        }
+
+        .article-container {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 48px 32px;
+            background-color: #ffffff;
+        }
+
+        /* 文章头部 */
+        .article-header {
+            margin-bottom: 36px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid #eaecef;
+        }
+
+        .article-title {
+            font-size: 28px;
+            font-weight: 600;
+            line-height: 1.4;
+            color: #1a1a1a;
+            margin-bottom: 16px;
+        }
+
+        .article-meta {
+            font-size: 14px;
+            color: #8a919f;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* 文章正文 */
+        .article-content {
+            font-size: 16px;
+            color: #333;
+        }
+
+        .article-content p {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .article-content h2 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin: 32px 0 16px;
+        }
+
+        .article-content h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin: 24px 0 12px;
+        }
+
+        /* 引用块 */
+        .article-content blockquote {
+            margin: 20px 0;
+            padding: 12px 20px;
+            border-left: 4px solid #4e6ef2;
+            background-color: #f5f7ff;
+            color: #555;
+            font-size: 15px;
+        }
+
+        /* 列表 */
+        .article-content ul,
+        .article-content ol {
+            margin: 16px 0;
+            padding-left: 28px;
+        }
+
+        .article-content li {
+            margin-bottom: 8px;
+        }
+
+        /* 代码块 */
+        .article-content code {
+            background-color: #f3f4f6;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 14px;
+            color: #d63384;
+        }
+
+        .article-content pre {
+            background-color: #282c34;
+            color: #abb2bf;
+            padding: 16px 20px;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: 20px 0;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .article-content pre code {
+            background: none;
+            color: inherit;
+            padding: 0;
+        }
+
+        /* 页脚 */
+        .article-footer {
+            margin-top: 48px;
+            padding-top: 24px;
+            border-top: 1px solid #eaecef;
+            font-size: 13px;
+            color: #8a919f;
+            text-align: center;
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 640px) {
+            .article-container {
+                padding: 32px 20px;
+            }
+            .article-title {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-container">
+        <!-- 文章头部 -->
+        <header class="article-header">
+            <h1 class="article-title">前端开发的思考与实践：如何构建可维护的页面结构</h1>
+            <div class="article-meta">
+                <span>作者：技术编辑部</span>
+                <span>发布时间：2025-06-15</span>
+                <span>阅读时长：约 5 分钟</span>
+            </div>
+        </header>
+
+        <!-- 文章正文 -->
+        <article class="article-content">
+            <p>在现代前端开发中，页面结构的可维护性往往决定了项目的长期迭代成本。一个清晰、合理的 HTML 结构不仅能提升开发效率，还能降低后续重构的难度。本文将从实践角度出发，分享几个构建可维护页面的核心思路。</p>
+
+            <h2>一、语义化标签优先</h2>
+            <p>语义化是 HTML 设计的核心原则之一。使用 <code>&lt;header&gt;</code>、<code>&lt;article&gt;</code>、<code>&lt;section&gt;</code>、<code>&lt;footer&gt;</code> 等语义标签，能够让页面结构一目了然，同时也有利于 SEO 和无障碍访问。</p>
+            
+            <blockquote>
+                好的页面结构，应当在去掉 CSS 之后，依然能清晰地看出内容的层级与逻辑。
+            </blockquote>
+
+            <h2>二、合理划分视图与数据</h2>
+            <p>在实现列表与详情切换这类需求时，将视图切换和数据加载分离是非常重要的设计思想。例如我们使用 iframe 加载详情页，本质上就是将详情页作为独立模块维护，列表页只负责视图切换，不侵入详情页的内部逻辑。</p>
+
+            <h3>常见的实现方式对比</h3>
+            <ul>
+                <li><strong>路由跳转</strong>：实现简单，但会刷新页面，体验不够连贯；</li>
+                <li><strong>单页渲染</strong>：体验流畅，但所有逻辑耦合在一个页面，维护成本高；</li>
+                <li><strong>iframe 嵌入</strong>：模块解耦、共用路由，适合多独立页面的场景。</li>
+            </ul>
+
+            <h2>三、代码示例</h2>
+            <p>下面是一个简单的视图切换核心代码示例：</p>
+            
+<pre><code>// 切换到详情视图
+function showDetail(src) {
+    listView.classList.remove('active');
+    detailView.classList.add('active');
+    iframe.src = src;
+}
+
+// 返回列表视图
+function backToList() {
+    detailView.classList.remove('active');
+    listView.classList.add('active');
+}</code></pre>
+
+            <p>这种写法的优势在于，列表页和详情页可以各自独立开发、独立部署，互不影响。当后续需要修改文章详情样式时，只需要修改对应 HTML 文件即可，无需改动列表页逻辑。</p>
+
+            <h2>四、总结</h2>
+            <p>构建可维护的前端页面，本质上是在「开发效率」「用户体验」「维护成本」三者之间寻找平衡。对于以内容展示为主的站点，iframe 方案虽然不是最“时髦”的做法，但往往是最稳妥、成本最低的选择。</p>
+        </article>
+
+        <!-- 文章页脚 -->
+        <footer class="article-footer">
+            本文仅作示例演示，可根据实际需求替换内容
+        </footer>
+    </div>
+</body>
+</html>

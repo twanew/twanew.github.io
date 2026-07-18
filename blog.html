@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-5BB8W2X');</script>
+  <!-- End Google Tag Manager -->
+  <link rel="icon" type="image/png" href="../favicon.png"/>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Projects | Personal Portfolio</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <!-- Vendor CSS Files -->
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="../assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <!-- Template Main CSS File -->
+  <link href="../assets/css/style.css" rel="stylesheet">
+  <link href="../assets/css/blog.css" rel="stylesheet">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-169007209-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-169007209-3');
+  </script>
+  <!-- =======================================================
+  * Template Name: Personal - v2.1.0
+  * Template URL: https://bootstrapmade.com/personal-free-resume-bootstrap-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5BB8W2X"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <!-- ======= Header ======= -->
+  <div id="site-header" data-site-header></div>
+  <script src="../assets/js/site-header.js"></script>
+  <section id="portfolio" class="portfolio section-show blog-page">
+<!-- 背景网格装饰 -->
+    <div class="bg-grid"></div>
+
+    <!-- 主容器 -->
+    <div class="blog-container">
+        <!-- 顶部装饰标题区 -->
+        <div class="section-header">
+            <h1 class="section-title">PROJECTS</h1>
+            <div class="title-line"></div>
+        </div>
+
+        <!-- 分类筛选栏 -->
+        <div class="filter-bar" id="filterBar">
+            <!-- 分类按钮由 JS 动态生成，配置见下方 JS 数据区 -->
+        </div>
+
+        <!-- 卡片网格展示区 -->
+        <div class="cards-grid" id="cardsGrid">
+            <!-- 卡片由 JS 动态生成，数据配置见下方 -->
+        </div>
+
+
+
+        
+        <!-- 页脚 -->
+        <footer class="footer">
+            © 2024 XingHuiSama · All rights reserved.
+        </footer>
+    </div>
+  </section><!-- End Projects Section -->
+  <script>
+/* ============================================
+           配置区 - 可在此修改分类和项目数据
+           ============================================ */
+
+        // ====== 分类配置 ======
+        // 新增分类只需在此数组中添加，value 需与项目 data-category 对应
+        const CATEGORIES = [
+            { label: 'ALL', value: 'all' },
+            { label: 'AI', value: 'ai' },
+            { label: 'Python', value: 'python' },
+            { label: 'Tool', value: 'tool' }
+        ];
+
+        // ====== 项目数据配置 ======
+        // 所有卡片统一测试链接，替换为真实地址即可
+        const DEFAULT_LINK = 'https://www.xinghuisama.top/projects';
+
+        const PROJECTS = [
+            {
+                icon: '⚛️',
+                title: 'Gromacs RMSF Tool',
+                description: '基于 WSL2 Ubuntu22 平台的计算化学工具，整合分子动力学模拟流程，自动化分析蛋白质 RMSF 数据。',
+                tags: ['Gromacs', 'RMSF', 'WSL2'],
+                category: 'tool',
+                link: DEFAULT_LINK
+            },
+            {
+                icon: '☁️',
+                title: 'XingHuiSama の Cloud',
+                description: '基于 Next.js App Router 构建的高性能全栈个人博客，包含悬浮音乐播放器与毛玻璃 UI 设计。',
+                tags: ['Next.js', 'React', 'TailwindCSS'],
+                category: 'tool',
+                link: DEFAULT_LINK
+            },
+            {
+                icon: '🧠',
+                title: 'Neural Network Visualizer',
+                description: '交互式神经网络可视化工具，直观展示前向传播与反向传播过程，支持自定义网络结构。',
+                tags: ['PyTorch', 'NumPy', 'Matplotlib'],
+                category: 'ai',
+                link: DEFAULT_LINK
+            },
+            {
+                icon: '📊',
+                title: 'Data Pipeline Framework',
+                description: '轻量级数据处理流水线框架，支持多源数据接入、清洗、特征工程全流程自动化调度。',
+                tags: ['Python', 'Pandas', 'ETL'],
+                category: 'python',
+                link: DEFAULT_LINK
+            },
+            {
+                icon: '🔬',
+                title: 'Molecule Generator',
+                description: '基于生成式 AI 的小分子药物分子生成模型，使用强化学习优化分子属性与合成可及性。',
+                tags: ['Deep Learning', 'RDKit', 'Drug Discovery'],
+                category: 'ai',
+                link: DEFAULT_LINK
+            },
+            {
+                icon: '🛠️',
+                title: 'CLI Dev Toolkit',
+                description: '开发者命令行工具箱，集成代码格式化、Git 批量操作、项目脚手架等常用开发效率工具。',
+                tags: ['Shell', 'CLI', 'DevOps'],
+                category: 'tool',
+                link: DEFAULT_LINK
+            },
+            {
+                icon: '🤖',
+                title: 'LLM Fine-tuning Suite',
+                description: '大语言模型微调全流程套件，支持 LoRA / QLoRA 高效微调，内置多数据集预处理模板。',
+                tags: ['Transformers', 'LoRA', 'NLP'],
+                category: 'ai',
+                link: DEFAULT_LINK
+            },
+            {
+                icon: '🐍',
+                title: 'Async Web Crawler',
+                description: '高性能异步网络爬虫框架，支持分布式部署、自动反爬策略与结构化数据导出。',
+                tags: ['Asyncio', 'Aiohttp', 'Scrapy'],
+                category: 'python',
+                link: DEFAULT_LINK
+            }
+        ];
+
+        /* ============================================
+           渲染逻辑 - 一般无需修改
+           ============================================ */
+
+        const filterBar = document.getElementById('filterBar');
+        const cardsGrid = document.getElementById('cardsGrid');
+
+        // GitHub SVG 图标内联字符串
+        const GITHUB_SVG = `
+            <svg class="github-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+        `;
+
+        /**
+         * 渲染分类按钮
+         */
+        function renderFilters() {
+            CATEGORIES.forEach((cat, index) => {
+                const btn = document.createElement('button');
+                btn.className = `filter-btn ${index === 0 ? 'active' : ''}`;
+                btn.textContent = cat.label;
+                btn.dataset.category = cat.value;
+                btn.addEventListener('click', () => handleFilter(cat.value));
+                filterBar.appendChild(btn);
+            });
+        }
+
+        /**
+         * 渲染所有项目卡片
+         */
+        function renderCards() {
+            PROJECTS.forEach((project, index) => {
+                const card = document.createElement('a');
+                card.className = 'project-card';
+                card.href = project.link;
+                card.target = '_blank';
+                card.rel = 'noopener noreferrer';
+                card.dataset.category = project.category;
+                // 错落入场延迟（仅首次加载）
+                card.style.animationDelay = `${index * 0.08}s`;
+
+                card.innerHTML = `
+                    <div class="card-header">
+                        <div class="card-title-wrap">
+                            <span class="card-icon">${project.icon}</span>
+                            <h3 class="card-title">${project.title}</h3>
+                        </div>
+                        ${GITHUB_SVG}
+                    </div>
+                    <p class="card-description">${project.description}</p>
+                    <div class="card-tags">
+                        ${project.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                    </div>
+                `;
+
+                cardsGrid.appendChild(card);
+            });
+        }
+
+        /**
+         * 处理分类筛选（无动画版本）
+         */
+        function handleFilter(category) {
+            // 更新按钮选中状态
+            const buttons = filterBar.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.category === category);
+            });
+
+            // 直接切换卡片显示隐藏，无过渡动画
+            const cards = cardsGrid.querySelectorAll('.project-card');
+            cards.forEach(card => {
+                const cardCategory = card.dataset.category;
+                const shouldShow = category === 'all' || cardCategory === category;
+                card.classList.toggle('hide', !shouldShow);
+            });
+        }
+
+        /**
+         * 初始化
+         */
+        function init() {
+            renderFilters();
+            renderCards();
+        }
+
+        // 启动
+        document.addEventListener('DOMContentLoaded', init);
+  </script>
+  <!-- Vendor JS Files -->
+  <script src="../assets/vendor/jquery/jquery.min.js"></script>
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="../assets/vendor/php-email-form/validate.js"></script>
+  <script src="../assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="../assets/vendor/counterup/counterup.min.js"></script>
+  <script src="../assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="../assets/vendor/venobox/venobox.min.js"></script>
+  <script src="../assets/vendor/typed.js/typed.min.js"></script>
+  <script type="text/javascript">
+    var typed = new Typed('.typing',{
+      strings: ["Coder", "Developer", "AI Enthusiast"],
+      loop: true,
+      typeSpeed: 65,
+      backSpeed: 65
+    });
+  </script>
+  <!-- Template Main JS File -->
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
