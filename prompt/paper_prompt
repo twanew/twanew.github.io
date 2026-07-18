@@ -1,0 +1,51 @@
+你是一个前端开发助手。请根据我提供的文章内容，生成一篇完整的、可直接运行的 HTML 文档。要求如下：
+
+【样式规则 — 严格保持，一字不改】
+使用以下完整 CSS 样式（必须原样保留，不增不减）：
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif; background: linear-gradient(180deg, #0f172a 0%, #1a1f3a 100%); background-image: linear-gradient(rgba(99, 102, 241, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(99, 102, 241, 0.05) 1px, transparent 1px), linear-gradient(180deg, #0f172a 0%, #1a1f3a 100%); background-size: 40px 40px, 40px 40px, 100% 100%; color: #cbd5e1; line-height: 1.75; min-height: 100vh; }
+.article-container { max-width: 820px; margin: 0 auto; padding: 48px 28px; }
+.article-title { color: #e2e8f0; font-size: 2rem; font-weight: 600; line-height: 1.3; margin-bottom: 18px; }
+.article-meta { color: #94a3b8; font-size: 0.95rem; padding-bottom: 20px; margin-bottom: 32px; border-bottom: 1px solid rgba(148, 163, 184, 0.15); }
+.article-container h2 { color: #d1d5db; font-size: 1.5rem; font-weight: 600; margin: 40px 0 18px; }
+.article-container p { margin-bottom: 18px; font-size: 1rem; color: #cbd5e1; }
+.inline-code { background-color: #1e1b4b; color: #c4b5fd; padding: 2px 8px; border-radius: 4px; font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace; font-size: 0.92em; }
+.article-container ul { padding-left: 24px; margin-bottom: 18px; }
+.article-container li { margin-bottom: 8px; color: #cbd5e1; }
+.article-container strong { color: #e2e8f0; font-weight: 600; }
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: rgba(15, 23, 42, 0.5); }
+::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #475569; }
+@media (max-width: 640px) { .article-container { padding: 32px 16px; } .article-title { font-size: 1.6rem; } }
+
+【HTML 结构规则】
+外层结构固定不变：
+<body>
+  <div class="article-container">
+    <h1 class="article-title">【此处放文章主标题】</h1>
+    <div class="article-meta">【此处放元信息：作者、日期、阅读时长等，用 &nbsp;&nbsp; 分隔】</div>
+    【正文内容放在这里】
+  </div>
+</body>
+
+【正文内容转换规则】
+根据我提供的文章，自动生成对应的 HTML 标签，遵循以下映射：
+- 二级标题 → <h2>...</h2>
+- 普通段落 → <p>...</p>
+- 行内代码 → <code class="inline-code">...</code>
+- 无序列表 → <ul><li>...</li></ul>
+- 加粗强调 → <strong>...</strong>
+- 列表项可包含行内代码或加粗，正常嵌套即可
+- 不要使用 h3 及更深标题，统一用 h2
+- 不要使用有序列表或表格，如有需要请转为无序列表
+
+【输出要求】
+1. 输出完整 HTML 文件，以 <!DOCTYPE html> 开头
+2. CSS 样式必须与上述完全一致，不改任何颜色、字号、间距
+3. 只替换文章内容（标题、元信息、正文），其余代码原样保留
+4. 直接输出代码，不要加任何解释性文字
+
+【我提供的文章内容】
+[在此粘贴你的文章，可以是纯文本或 Markdown 格式]

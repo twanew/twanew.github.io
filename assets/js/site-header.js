@@ -11,11 +11,11 @@
     headerClass: 'header-top',
     active: '',
     basePath: '',
-    resumeUrl: 'https://drive.google.com/file/d/1pT-Nk6AxY9ZOWBizuDb4htA3IiUF_fSe/view?usp=sharing',
+    resumeUrl: '../tw_resume.pdf',
     socialLinks: [
-      { href: 'https://www.linkedin.com/in/rajaprerak', className: 'linkedin', icon: 'bxl-linkedin' },
-      { href: 'https://www.github.com/rajaprerak', className: 'github', icon: 'bxl-github' },
-      { href: 'mailto:rajaprerak@gmail.com', className: 'google', icon: 'bxl-google' }
+      { href: '', className: 'linkedin', icon: 'bxl-linkedin' },
+      { href: 'https://github.com/twanew', className: 'github', icon: 'bxl-github' },
+      { href: '', className: 'google', icon: 'bxl-google' }
     ]
   };
 
